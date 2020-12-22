@@ -36,6 +36,10 @@ function easy_breadcrumb_init() {
   global $theme;
   $site_theme = config_get('system.core', 'theme_default');
   $admin_theme = config_get('system.core', 'admin_theme');
+  define("include_home", config_get('easy_breadcrumb.settings', 'include_home'));
+  define("include_title", config_get('easy_breadcrumb.settings', 'include_title'));
+  define("truncate_mode", config_get('easy_breadcrumb.settings', 'truncate_mode'));
+  define("caps_mode", config_get('easy_breadcrumb.settings', 'caps_mode'));
 
   // Disable admin theme breadcrumb, but only if different than default theme.
   if ($theme === $admin_theme && $site_theme !== $admin_theme) {
